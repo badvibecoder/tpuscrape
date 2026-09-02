@@ -5,11 +5,7 @@ A scraper for GPU specifications from the TechPowerUp GPU database
 Architecture index to enumerate every GPU, then saves each one as a structured
 `spec.yaml` in its own folder.
 
-**Why a real browser?** The site serves an aggressive anti-bot challenge
-(fingerprinting + proof-of-work + a drag-captcha fallback). `tpuscrape` launches
-your real Chrome and drives it over the DevTools protocol, so it passes like a
-normal browser. If a challenge ever needs a human, it pauses and lets you solve
-it in the visible Chrome window.
+**Why a real browser?** Why a real browser? Modern websites utilize dynamic rendering and security measures that often block standard HTTP scripting libraries. To ensure reliable access and compatibility, tpuscrape drives a local instance of Chrome via the DevTools protocol. If the site presents a standard human verification challenge, the tool gracefully pauses to allow you to interact with the visible browser window.
 
 ## Features
 
@@ -108,5 +104,12 @@ state/scraper.db             # resume state (gitignored)
 ## Notes
 
 - Stop and restart anytime — completed GPUs are never re-scraped.
-- Keep the site's `robots.txt`/terms in mind and use a polite backoff.
+- Users are responsible for respecting the site's robots.txt and ToS. Always use a polite backoff (via --delay-min and --delay-max) to avoid degrading server performance.
 - The status dashboard is at `http://127.0.0.1:8080` while running.
+
+## Legal & Liability Disclaimer
+
+This software is provided "as is" and is intended for educational, research, and personal use only. 
+
+- **Terms of Service:** Using this tool may violate the Terms of Service of TechPowerUp or their API providers. Users are solely responsible for reviewing and complying with the target website's ToS. The creator of this repository assumes no liability for IP bans, account suspensions, or legal actions resulting from the use of this software.
+- **Data Ownership:** This tool extracts publicly accessible, factual data. It does not download copyrighted images or editorial content by default. All extracted data, specifications, and trademarks remain the property of their respective owners. Do not use this tool to mass-redistribute data for commercial purposes.
