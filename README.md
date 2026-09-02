@@ -5,7 +5,7 @@ A scraper for GPU specifications from the TechPowerUp GPU database
 Architecture index to enumerate every GPU, then saves each one as a structured
 `spec.yaml` in its own folder.
 
-**Why a real browser?** Why a real browser? Modern websites utilize dynamic rendering and security measures that often block standard HTTP scripting libraries. To ensure reliable access and compatibility, tpuscrape drives a local instance of Chrome via the DevTools protocol. If the site presents a standard human verification challenge, the tool gracefully pauses to allow you to interact with the visible browser window.
+**Why a real browser?** Modern websites utilize dynamic rendering and security measures that often block standard HTTP scripting libraries. To ensure reliable access and compatibility, tpuscrape drives a local instance of Chrome via the DevTools protocol. If the site presents a standard human verification challenge, the tool gracefully pauses to allow you to interact with the visible browser window.
 
 ## Features
 
