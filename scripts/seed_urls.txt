@@ -1,0 +1,9 @@
+# GPU specs URL feed.
+#
+# Put one GPU URL per line (a `#` starts a comment). The scraper picks these up
+# automatically while it runs — append to this file or use the status page's
+# "Add URLs" box. This is how you add GPUs that do NOT appear in the
+# relative-performance chart (workstation / datacenter / older cards, etc.).
+#
+# Use the exact /gpu-specs/<slug>.c#### URL from the site, e.g.:
+# https://www.techpowerup.com/gpu-specs/<name>.c####

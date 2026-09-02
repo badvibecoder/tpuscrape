@@ -1,0 +1,27 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Package managers / caches
+.uv-cache/
+.uv-python/
+.pip-cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Runtime state & downloads (do not commit scraped data)
+data/
+state/
+.browser-profile/
+.chrome-smoke/
+
+# Temp / inspection
+_inspect*/
+
+# OS / editor
+.DS_Store

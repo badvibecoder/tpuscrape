@@ -1,0 +1,51 @@
+# tpuscrape configuration
+
+base_url: "https://www.techpowerup.com"
+
+# Seed page: the relative-performance chart on this page seeds the frontier.
+seed_url: "https://www.techpowerup.com/gpu-specs/geforce-rtx-5090.c4216"
+
+# File to read extra URLs from (one per line, # comments allowed).
+url_feed_file: "scripts/seed_urls.txt"
+
+# Where per-GPU output folders are written.
+output_dir: "data"
+
+# Where scraper state (sqlite) lives.
+state_dir: "state"
+
+# Persistent Chrome profile (keeps cookies / firewall token between runs).
+profile_dir: ".browser-profile"
+
+browser:
+  chrome_binary: "/usr/bin/google-chrome-stable"
+  port: 9222
+  # Headed (visible) browser is required for the human-in-the-loop challenge flow.
+  headless: false
+  window_size: [1440, 900]
+
+timing:
+  # Polite randomized delay between GPU page fetches, in seconds.
+  delay_min: 2.0
+  delay_max: 6.0
+  nav_timeout_ms: 60000
+  # How long to wait for the firewall challenge to auto-resolve before asking a human.
+  challenge_wait_seconds: 60
+  # How long to keep a GPU blocked while waiting for a human to solve a challenge.
+  human_wait_seconds: 900
+  # Polite delay between architecture-listing page fetches during discovery.
+  discover_delay_min: 1.0
+  discover_delay_max: 2.0
+
+# Content defaults. Editorial prose (description), images, and raw HTML snapshots
+# are opt-in so the repo/run stays lean and avoids redistributing non-factual
+# material. Enable via the matching CLI flags (--include-description,
+# --include-images, --keep-html) or by setting these to true.
+scrape:
+  include_description: false
+  include_images: false
+  keep_html: false
+
+status:
+  host: "127.0.0.1"
+  port: 8080
